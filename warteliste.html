@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<title>Warteliste Schwimmunterricht — Schwimmschule Fröschlein</title>
+<meta name="description" content="Jetzt unverbindlich in die Warteliste für den regulären Schwimmunterricht der Schwimmschule Fröschlein eintragen.">
+<link rel="canonical" href="https://www.schwimmschule-froeschlein.de/warteliste.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Schwimmschule Fröschlein">
+<meta property="og:title" content="Warteliste Schwimmunterricht — Schwimmschule Fröschlein">
+<meta property="og:description" content="Jetzt unverbindlich in die Warteliste für den regulären Schwimmunterricht der Schwimmschule Fröschlein eintragen.">
+<meta property="og:url" content="https://www.schwimmschule-froeschlein.de/warteliste.html">
+<meta property="og:image" content="https://www.schwimmschule-froeschlein.de/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Warteliste Schwimmunterricht — Schwimmschule Fröschlein">
+<meta name="twitter:description" content="Jetzt unverbindlich in die Warteliste für den regulären Schwimmunterricht der Schwimmschule Fröschlein eintragen.">
+<meta name="twitter:image" content="https://www.schwimmschule-froeschlein.de/og-image.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="pg-warteliste">
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="logo-froeschlein.png" alt="Schwimmschule Fröschlein Logo" class="brand-mark">
+      Schwimmschule Fröschlein
+    </a>
+    <a class="back-link" href="index.html">← Zurück zur Website</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <span class="section-eyebrow">Warteliste Schwimmunterricht</span>
+    <h1>Regulärer Schwimmunterricht außerhalb der Ferien</h1>
+    <p class="lead">Unser laufender Schwimmunterricht außerhalb der Ferienzeiten ist aktuell ausgebucht. Tragt euch gerne unverbindlich in die Warteliste ein — wir melden uns, sobald ein Platz frei wird.</p>
+
+    <div class="info-box">
+      Ferienkurse sind hiervon nicht betroffen — dafür gibt es ein eigenes Kursangebot auf der <a href="index.html#kurse">Startseite</a>.
+    </div>
+
+    <div class="waitlist-card">
+      <form id="waitlist-form" action="https://formspree.io/f/xgojjgdk" method="POST" onsubmit="submitWaitlist(event)">
+        <input type="hidden" name="_subject" value="Neuer Wartelisteneintrag">
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="w-child">Name des Kindes</label>
+            <input id="w-child" name="Name des Kindes" required>
+          </div>
+          <div class="form-row">
+            <label for="w-dob">Geburtsdatum des Kindes</label>
+            <input id="w-dob" name="Geburtsdatum des Kindes" type="text" inputmode="numeric" placeholder="TT.MM.JJJJ" pattern="\d{2}\.\d{2}\.\d{4}" title="Bitte im Format TT.MM.JJJJ eingeben" maxlength="10" oninput="formatDobInput(event)" required>
+          </div>
+          <div class="form-row">
+            <label for="w-phone">Telefonnummer</label>
+            <input id="w-phone" name="Telefonnummer" type="tel" required>
+          </div>
+          <div class="form-row">
+            <label for="w-email">E-Mail-Adresse</label>
+            <input id="w-email" name="E-Mail-Adresse" type="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="w-message">Deine Nachricht an uns <span class="optional">(optional)</span></label>
+          <textarea id="w-message" name="Nachricht" rows="4" placeholder="z. B. bevorzugte Wochentage, Vorkenntnisse, Besonderheiten"></textarea>
+        </div>
+        <label class="privacy-check" for="w-privacy">
+          <input type="checkbox" id="w-privacy" name="Datenschutz bestätigt" required>
+          <span>Mit dem Absenden des Formulars stimme ich zu, dass meine Daten zur Verwaltung der Warteliste verarbeitet werden. Weitere Informationen finde ich in der <a href="datenschutz.html#warteliste">Datenschutzerklärung</a>.</span>
+        </label>
+        <button type="submit" class="form-submit" id="waitlist-submit-btn">In die Warteliste eintragen</button>
+        <p class="form-note">Beim Absenden wird die Anfrage direkt an uns geschickt — ihr müsst nichts weiter tun.</p>
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+    <div id="waitlist-success" class="waitlist-card" style="display:none;">
+      <div class="success-content">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Danke für deinen Eintrag!</h3>
+        <p>Wir haben eure Anfrage erhalten und melden uns, sobald ein Platz frei wird.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <ul class="footer-nav">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="schwimmunterricht.html">Schwimmunterricht</a></li>
+    <li><a href="unser-team.html">Unser Team</a></li>
+    <li><a href="standorte.html">Standorte</a></li>
+    <li><a href="rund-ums-schwimmen.html">Rund ums Schwimmen</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+  </ul>
+  <p class="footer-fine">© 2026 Schwimmschule Fröschlein.</p>
+  <div class="brand-credit">
+    <span class="line">Code with
+      <svg width="12" height="10" viewBox="0 0 7 6" shape-rendering="crispEdges" aria-label="love">
+        <rect x="1" y="0" width="1" height="1" fill="#E0836F"/>
+        <rect x="2" y="0" width="1" height="1" fill="#E0836F"/>
+        <rect x="4" y="0" width="1" height="1" fill="#E0836F"/>
+        <rect x="5" y="0" width="1" height="1" fill="#E0836F"/>
+        <rect x="0" y="1" width="7" height="1" fill="#E0836F"/>
+        <rect x="0" y="2" width="7" height="1" fill="#E0836F"/>
+        <rect x="1" y="3" width="5" height="1" fill="#E0836F"/>
+        <rect x="2" y="4" width="3" height="1" fill="#E0836F"/>
+        <rect x="3" y="5" width="1" height="1" fill="#E0836F"/>
+      </svg>
+    </span>
+    <span class="line">in Henstedt-Ulzburg</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
