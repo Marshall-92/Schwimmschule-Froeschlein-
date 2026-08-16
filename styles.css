@@ -34,6 +34,15 @@
 @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/ibm-plex-mono-500.woff2") format("woff2");}
 @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/ibm-plex-mono-600.woff2") format("woff2");}
 
+/* ===== Social-Icons (global, auf allen Seiten gleich) ===== */
+.social-icons{display:flex;gap:10px;justify-content:center;margin:0 0 14px;}
+.social-icon{
+  display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
+  border-radius:50%;background:var(--sand-100);color:var(--teal-700);transition:background .15s,color .15s;
+}
+.social-icon:hover{background:var(--coral-500);color:var(--white);}
+.social-icon svg{width:18px;height:18px;}
+
 
 /* ===== index.html (pg-home) ===== */
 body.pg-home *{box-sizing:border-box;}
