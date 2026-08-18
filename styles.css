@@ -5,17 +5,17 @@
   --blue-500: #4EC0B8;
   --sand-100: #E6FBF9;
   --sand-050: #F2FDFB;
-  --sun-400: #E2833B;
-  --coral-500: #E0836F;
-  --coral-600: #C96A57;
+  --sun-400: #A85714;
+  --coral-500: #B8563F;
+  --coral-600: #A34A34;
   --ink-900: #1B3B37;
   --ink-600: #4B6864;
   --white: #FFFFFF;
   --line: #CBE0DB;
-  --frog-700: #5C7A1E;
+  --frog-700: #4E6819;
   --frog-500: #9ECB3D;
   --frog-100: #E6F0C9;
-  --turquoise-700: #3AA79F;
+  --turquoise-700: #256F69;
   --radius: 14px;
   --shadow: 0 8px 24px rgba(11,61,61,.10);
   --font-display: "Fraunces", serif;
@@ -42,6 +42,15 @@
 }
 .social-icon:hover{background:var(--coral-500);color:var(--white);}
 .social-icon svg{width:18px;height:18px;}
+
+/* ===== Skip-Link (global) ===== */
+.skip-link{
+  position:absolute;top:-100px;left:12px;z-index:200;
+  background:var(--teal-900);color:var(--white);padding:12px 20px;
+  border-radius:8px;font-family:var(--font-body);font-weight:600;font-size:.9rem;
+  text-decoration:none;transition:top .15s;
+}
+.skip-link:focus{top:12px;}
 
 
 /* ===== index.html (pg-home) ===== */
@@ -89,7 +98,7 @@ body.pg-home .nav-toggle{display:none;background:none;border:none;cursor:pointer
 body.pg-home .nav-toggle svg{width:26px;height:26px;}
 body.pg-home /* ---------- Hero ---------- */
   .hero{
-    background:linear-gradient(180deg,var(--turquoise-700) 0%,var(--blue-500) 100%);
+    background:linear-gradient(180deg,var(--teal-900) 0%,var(--turquoise-700) 100%);
     color:var(--white);position:relative;overflow:hidden;
     padding:72px 0 0;
   }
@@ -103,7 +112,7 @@ body.pg-home .eyebrow{
     color:var(--white);margin-bottom:18px;
   }
 body.pg-home .hero h1{font-size:clamp(2.2rem,4vw,3.4rem);color:var(--white);line-height:1.08;}
-body.pg-home .hero p{color:#EAFBF8;font-size:1.08rem;max-width:46ch;}
+body.pg-home .hero p{color:#F2FDFB;font-size:1.08rem;max-width:46ch;}
 body.pg-home .hero-ctas{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
 body.pg-home .btn-primary{
     background:var(--coral-500);color:var(--white);border:none;
@@ -121,7 +130,7 @@ body.pg-home .btn-ghost{
 body.pg-home .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08);}
 body.pg-home .hero-stats{display:flex;gap:28px;margin-top:44px;flex-wrap:wrap;}
 body.pg-home .hero-stat b{display:block;font-family:var(--font-display);font-size:1.6rem;color:var(--white);}
-body.pg-home .hero-stat span{font-size:.82rem;color:#CDEDE7;}
+body.pg-home .hero-stat span{font-size:.82rem;color:#F2FDFB;}
 body.pg-home .hero-visual{position:relative;}
 body.pg-home .wave-divider{display:block;width:100%;height:auto;margin-top:-2px;}
 body.pg-home /* ---------- Lane rope (signature element) ---------- */
@@ -227,7 +236,7 @@ body.pg-home .trust-strip .container{
   }
 body.pg-home .trust-item{display:flex;align-items:center;gap:12px;}
 body.pg-home .trust-item svg{width:28px;height:28px;color:var(--sun-400);flex-shrink:0;}
-body.pg-home .trust-item span{font-size:.92rem;color:#EAFBF8;}
+body.pg-home .trust-item span{font-size:.92rem;color:#F2FDFB;}
 body.pg-home /* ---------- Contact ---------- */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
 body.pg-home .contact-info dt{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-600);margin-top:20px;}
@@ -451,7 +460,7 @@ body.pg-team .avatar-badge{
     border:3px solid var(--white);
   }
 body.pg-team .avatar-badge svg{width:14px;height:14px;color:var(--white);}
-body.pg-team .team-card h3{font-size:1.1rem;margin-bottom:4px;}
+body.pg-team .team-card h2{font-size:1.1rem;margin-bottom:4px;}
 body.pg-team .team-card .role{
     font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
     color:var(--teal-700);background:var(--sand-100);display:inline-block;padding:3px 11px;
@@ -599,7 +608,7 @@ body.pg-downloads .doc-type{
     color:var(--teal-700);background:var(--sand-100);display:inline-block;padding:3px 10px;
     border-radius:999px;margin-bottom:10px;width:fit-content;font-weight:600;
   }
-body.pg-downloads .doc-body h3{font-size:1.1rem;margin-bottom:6px;}
+body.pg-downloads .doc-body h2{font-size:1.1rem;margin-bottom:6px;}
 body.pg-downloads .doc-body p{color:var(--ink-600);font-size:.88rem;margin:0 0 16px;flex:1;}
 body.pg-downloads .doc-actions{display:flex;gap:10px;align-items:center;}
 body.pg-downloads .btn-download{
@@ -683,7 +692,7 @@ body.pg-warteliste .form-status.visible{display:block;}
 body.pg-warteliste .form-status.error{background:#FDEDE9;border:1.5px solid var(--coral-500);color:var(--ink-900);}
 body.pg-warteliste .success-content{text-align:center;padding:16px 0;}
 body.pg-warteliste .success-content svg{width:52px;height:52px;color:var(--frog-500);margin:0 auto 14px;}
-body.pg-warteliste .success-content h3{margin-bottom:8px;}
+body.pg-warteliste .success-content h2{margin-bottom:8px;}
 body.pg-warteliste .success-content p{color:var(--ink-600);font-size:.92rem;margin:0;}
 body.pg-warteliste .form-submit:disabled{opacity:.6;cursor:not-allowed;}
 body.pg-warteliste .form-submit{
@@ -763,7 +772,7 @@ body.pg-unterricht .info-card::before{
     background:linear-gradient(90deg,var(--frog-500),var(--sun-400));
   }
 body.pg-unterricht .info-card-icon{width:34px;height:34px;color:var(--frog-700);margin-bottom:12px;}
-body.pg-unterricht .info-card h3{font-size:1.05rem;margin-bottom:8px;}
+body.pg-unterricht .info-card h2{font-size:1.05rem;margin-bottom:8px;}
 body.pg-unterricht .info-card p{color:var(--ink-600);font-size:.9rem;margin:0;font-style:italic;}
 body.pg-unterricht .placeholder-tag{
     display:inline-block;font-family:var(--font-mono);font-size:.62rem;text-transform:uppercase;
@@ -960,7 +969,7 @@ body.pg-standorte .location-card::before{
     background:linear-gradient(90deg,var(--frog-500),var(--sun-400));
   }
 body.pg-standorte .location-icon{width:32px;height:32px;color:var(--frog-700);margin-bottom:12px;}
-body.pg-standorte .location-card h3{font-size:1.1rem;margin-bottom:6px;}
+body.pg-standorte .location-card h2{font-size:1.1rem;margin-bottom:6px;}
 body.pg-standorte .location-card .region{
     font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
     color:var(--teal-700);background:var(--sand-100);display:inline-block;padding:3px 10px;

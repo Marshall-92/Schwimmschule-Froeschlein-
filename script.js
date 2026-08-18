@@ -488,7 +488,7 @@ function teamCardHtml(m, isPlaceholder){
   return `
     <div class="team-card">
       <div class="avatar">${avatarInner}</div>
-      <h3>${escapeHtml(name)}</h3>
+      <h2>${escapeHtml(name)}</h2>
       <span class="role">${escapeHtml(role)}</span>
       <p style="${m.bio ? 'font-style:normal;' : ''}">${escapeHtml(bio)}</p>
       ${tag}
