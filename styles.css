@@ -1119,3 +1119,5 @@ body.pg-home .wa-link svg{width:18px;height:18px;}
 body.pg-home .wa-note{display:block;margin-top:4px;font-size:.88rem;font-weight:400;color:var(--ink-600);}
 body.pg-home .wa-note a{color:var(--teal-700);font-weight:600;text-decoration:underline;}
 body.pg-home .wa-note a:hover{color:var(--coral-500);}
+body.pg-home .wa-number{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);}
+body.pg-home .wa-number:hover{color:var(--coral-500);border-bottom-color:var(--coral-500);}
