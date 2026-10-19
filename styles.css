@@ -449,17 +449,17 @@ body.pg-team .team-card::before{
     background:linear-gradient(90deg,var(--frog-500),var(--sun-400));
   }
 body.pg-team .avatar{
-    width:96px;height:96px;border-radius:50%;margin:6px auto 18px;
+    width:152px;height:152px;border-radius:50%;margin:6px auto 20px;
     background:var(--frog-100);display:flex;align-items:center;justify-content:center;
     position:relative;
   }
-body.pg-team .avatar svg{width:46px;height:46px;color:var(--frog-500);}
+body.pg-team .avatar svg{width:70px;height:70px;color:var(--frog-500);}
 body.pg-team .avatar-badge{
-    position:absolute;bottom:-2px;right:-2px;width:28px;height:28px;border-radius:50%;
+    position:absolute;bottom:-2px;right:-2px;width:36px;height:36px;border-radius:50%;
     background:var(--coral-500);display:flex;align-items:center;justify-content:center;
     border:3px solid var(--white);
   }
-body.pg-team .avatar-badge svg{width:14px;height:14px;color:var(--white);}
+body.pg-team .avatar-badge svg{width:18px;height:18px;color:var(--white);}
 body.pg-team .team-card h2{font-size:1.1rem;margin-bottom:4px;}
 body.pg-team .team-card .role{
     font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;

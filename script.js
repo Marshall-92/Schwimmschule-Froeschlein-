@@ -27,16 +27,23 @@ const DEFAULT_NEWS = [
 ];
 
 const DEFAULT_COURSES = [
-  {id:'c1', lane:1, title:'Wassergewöhnung Eltern-Kind', stage:'Kaulquappe', age:'3-5', ageLabel:'3–5 Jahre', dates:'Woche 1 · 27.–31. Juli · 9:00–9:45 Uhr', price:79},
-  {id:'c2', lane:2, title:'Seepferdchen-Kurs', stage:'Frosch-Anfänger', age:'5-7', ageLabel:'5–7 Jahre', dates:'Woche 1 · 27.–31. Juli · 10:00–10:45 Uhr', price:89},
-  {id:'c3', lane:3, title:'Seepferdchen-Kurs', stage:'Frosch-Anfänger', age:'5-7', ageLabel:'5–7 Jahre', dates:'Woche 2 · 3.–7. August · 9:00–9:45 Uhr', price:89},
-  {id:'c4', lane:4, title:'Bronze-Kurs (Fortgeschrittene)', stage:'Frosch-Fortgeschritten', age:'6-9', ageLabel:'6–9 Jahre', dates:'Woche 2 · 3.–7. August · 10:00–11:00 Uhr', price:99},
-  {id:'c5', lane:5, title:'Silber-Kurs (Technik & Ausdauer)', stage:'Springfrosch', age:'8-12', ageLabel:'8–12 Jahre', dates:'Woche 3 · 10.–14. August · 11:00–12:00 Uhr', price:109},
-  {id:'c6', lane:6, title:'Seepferdchen-Kurs', stage:'Frosch-Anfänger', age:'5-7', ageLabel:'5–7 Jahre', dates:'Woche 3 · 10.–14. August · 9:00–9:45 Uhr', price:89},
+  {id:'c1', lane:1, title:'Wassergewöhnung Eltern-Kind', location:'Norderstedt', dates:'Woche 1 · 27.–31. Juli · 9:00–9:45 Uhr', price:79},
+  {id:'c2', lane:2, title:'Seepferdchen-Kurs', location:'Hamburg (TSV Sasel)', dates:'Woche 1 · 27.–31. Juli · 10:00–10:45 Uhr', price:89},
+  {id:'c3', lane:3, title:'Seepferdchen-Kurs', location:'Norderstedt', dates:'Woche 2 · 3.–7. August · 9:00–9:45 Uhr', price:89},
+  {id:'c4', lane:4, title:'Bronze-Kurs (Fortgeschrittene)', location:'Hamburg (TSV Sasel)', dates:'Woche 2 · 3.–7. August · 10:00–11:00 Uhr', price:99},
+  {id:'c5', lane:5, title:'Silber-Kurs (Technik & Ausdauer)', location:'Pleystein bei Weiden', dates:'Woche 3 · 10.–14. August · 11:00–12:00 Uhr', price:109},
+  {id:'c6', lane:6, title:'Seepferdchen-Kurs', location:'Pleystein bei Weiden', dates:'Woche 3 · 10.–14. August · 9:00–9:45 Uhr', price:89},
 ];
 
 const DEFAULT_TEAM = [
-  {id:'t1', name:'Cathleen Schult', role:'Geschäftsführerin & Trainerin', bio:'', photo:''},
+  {id:'t1', name:'Cathleen Schult', role:'Schwimmtrainerin & Geschäftsführerin', bio:'', photo:'assets/team-cathleen.jpg'},
+  {id:'t2', name:'Dani', role:'Schwimmtrainerin', bio:'', photo:'assets/team-dani.jpg'},
+  {id:'t3', name:'Michelle', role:'Schwimmtrainerin', bio:'', photo:'assets/team-michelle.jpg'},
+  {id:'t4', name:'Rana', role:'Schwimmtrainerin', bio:'', photo:'assets/team-rana.jpg'},
+  {id:'t5', name:'Sarah', role:'Schwimmtrainerin', bio:'', photo:'assets/team-sarah.jpg'},
+  {id:'t6', name:'Steffi', role:'Schwimmtrainerin', bio:'', photo:'assets/team-steffi.jpg'},
+  {id:'t7', name:'Anna', role:'Schwimmtrainerin', bio:'', photo:''},
+  {id:'t8', name:'Bine', role:'Schwimmtrainerin', bio:'', photo:''},
 ];
 
 const LANE_PALETTES = [
@@ -93,10 +100,10 @@ async function saveCourses(){
 }
 
 function mailtoForCourse(course){
-  const subject = encodeURIComponent('Anfrage Ferienkurs: ' + course.title + ' (' + course.dates + ')');
+  const subject = encodeURIComponent('Kursanfrage: ' + course.title + ' (' + course.location + ')');
   const body = encodeURIComponent(
     'Hallo liebes Fröschlein-Team,\n\nich interessiere mich für folgenden Kurs:\n\n' +
-    course.title + '\n' + course.dates + '\n\nName des Kindes:\nGeburtsdatum des Kindes:\n\nHandynummer:\nE-Mail Adresse:\n\nViele Grüße'
+    course.title + '\nOrt: ' + course.location + '\nTermin: ' + course.dates + '\n\nName des Kindes:\nGeburtsdatum des Kindes:\n\nHandynummer:\nE-Mail Adresse:\n\nViele Grüße'
   );
   return 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
 }
@@ -104,11 +111,11 @@ function mailtoForCourse(course){
 /* ---------------- Öffentliche Kursanzeige ---------------- */
 function renderCourses(){
   const grid = document.getElementById('course-grid');
-  const filter = document.getElementById('age-filter').value;
-  const list = filter === 'all' ? courses : courses.filter(c => c.age === filter);
+  const filter = document.getElementById('location-filter').value;
+  const list = filter === 'all' ? courses : courses.filter(c => c.location === filter);
 
   if(list.length === 0){
-    grid.innerHTML = '<p>Für diese Altersgruppe sind aktuell keine Kurse geplant. Schreibt uns gerne, wir richten bei Bedarf eine neue Gruppe ein.</p>';
+    grid.innerHTML = '<p>Für diesen Ort sind aktuell keine Kurse geplant. Schreibt uns gerne, wir richten bei Bedarf eine neue Gruppe ein.</p>';
     return;
   }
 
@@ -123,7 +130,7 @@ function renderCourses(){
         <div class="lane-number">BAHN ${c.lane}</div>
       </div>
       <div class="lane-body">
-        <span class="lane-badge">${escapeHtml(c.stage || 'Fröschlein')}</span><span class="lane-badge age-badge">${c.ageLabel}</span>
+        <span class="lane-badge">${escapeHtml(c.location || 'Ort auf Anfrage')}</span>
         <h3>${escapeHtml(c.title)}</h3>
         <div class="lane-meta">
           <div><svg viewBox="0 0 24 24" fill="none" stroke="#4B6864" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-linecap="round"/></svg>${escapeHtml(c.dates)}</div>
@@ -246,19 +253,12 @@ document.addEventListener('keydown', (e) => {
   if(e.key === 'Escape') closeAdminLogin();
 });
 
-const AGE_LABELS = {'3-5':'3–5 Jahre','5-7':'5–7 Jahre','6-9':'6–9 Jahre','8-12':'8–12 Jahre'};
-
 function renderAdminCourses(){
   const body = document.getElementById('admin-course-body');
   body.innerHTML = courses.map(c => `
     <tr>
       <td><input value="${escapeHtml(c.title)}" onchange="updateCourseField('${c.id}','title',this.value)"></td>
-      <td><input value="${escapeHtml(c.stage || '')}" onchange="updateCourseField('${c.id}','stage',this.value)"></td>
-      <td>
-        <select onchange="updateCourseAge('${c.id}',this.value)">
-          ${Object.entries(AGE_LABELS).map(([val,label]) => `<option value="${val}" ${c.age===val?'selected':''}>${label}</option>`).join('')}
-        </select>
-      </td>
+      <td><input value="${escapeHtml(c.location || '')}" onchange="updateCourseField('${c.id}','location',this.value)"></td>
       <td><input value="${escapeHtml(c.dates)}" onchange="updateCourseField('${c.id}','dates',this.value)"></td>
       <td><input type="number" min="0" value="${c.price}" onchange="updateCourseField('${c.id}','price',parseInt(this.value,10)||0)"></td>
       <td><button class="admin-mini-btn danger" onclick="deleteCourse('${c.id}')">Löschen</button></td>
@@ -275,16 +275,6 @@ async function updateCourseField(courseId, field, value){
   showToast('Kurs aktualisiert.');
 }
 
-async function updateCourseAge(courseId, ageVal){
-  const course = courses.find(c => c.id === courseId);
-  if(!course) return;
-  course.age = ageVal;
-  course.ageLabel = AGE_LABELS[ageVal];
-  await saveCourses();
-  renderCourses();
-  showToast('Kurs aktualisiert.');
-}
-
 async function deleteCourse(courseId){
   if(!confirm('Diesen Kurs wirklich löschen?')) return;
   courses = courses.filter(c => c.id !== courseId);
@@ -296,14 +286,12 @@ async function deleteCourse(courseId){
 
 async function addCourse(e){
   e.preventDefault();
-  const age = document.getElementById('ac-age').value;
   const maxLane = courses.reduce((m,c) => Math.max(m, c.lane || 0), 0);
   const newCourse = {
     id: 'c_' + Date.now(),
     lane: maxLane + 1 > 6 ? (maxLane % 6) + 1 : maxLane + 1,
     title: document.getElementById('ac-title').value.trim(),
-    stage: document.getElementById('ac-stage').value.trim(),
-    age, ageLabel: AGE_LABELS[age],
+    location: document.getElementById('ac-location').value.trim(),
     dates: document.getElementById('ac-dates').value.trim(),
     price: parseInt(document.getElementById('ac-price').value, 10) || 0
   };
@@ -502,7 +490,7 @@ async function loadTeam(){
     const t = await window.storage.get(TEAM_KEY, true);
     team = JSON.parse(t.value);
   }catch(e){
-    team = [{id:'t1', name:'Cathleen Schult', role:'Geschäftsführerin & Trainerin', bio:'', photo:''}];
+    team = DEFAULT_TEAM;
   }
 
   if(team.length === 0){
