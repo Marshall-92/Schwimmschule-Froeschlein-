@@ -36,12 +36,12 @@ const DEFAULT_COURSES = [
 ];
 
 const DEFAULT_TEAM = [
-  {id:'t1', name:'Cathleen Schult', role:'Schwimmtrainerin & Geschäftsführerin', bio:'', photo:'assets/team-cathleen.jpg'},
-  {id:'t2', name:'Dani', role:'Schwimmtrainerin', bio:'', photo:'assets/team-dani.jpg'},
-  {id:'t3', name:'Michelle', role:'Schwimmtrainerin', bio:'', photo:'assets/team-michelle.jpg'},
-  {id:'t4', name:'Rana', role:'Schwimmtrainerin', bio:'', photo:'assets/team-rana.jpg'},
-  {id:'t5', name:'Sarah', role:'Schwimmtrainerin', bio:'', photo:'assets/team-sarah.jpg'},
-  {id:'t6', name:'Steffi', role:'Schwimmtrainerin', bio:'', photo:'assets/team-steffi.jpg'},
+  {id:'t1', name:'Cathleen Schult', role:'Schwimmtrainerin & Geschäftsführerin', bio:'', photo:'assets/team/team-cathleen.jpg'},
+  {id:'t2', name:'Dani', role:'Schwimmtrainerin', bio:'', photo:'assets/team/team-dani.jpg'},
+  {id:'t3', name:'Michelle', role:'Schwimmtrainerin', bio:'', photo:'assets/team/team-michelle.jpg'},
+  {id:'t4', name:'Rana', role:'Schwimmtrainerin', bio:'', photo:'assets/team/team-rana.jpg'},
+  {id:'t5', name:'Sarah', role:'Schwimmtrainerin', bio:'', photo:'assets/team/team-sarah.jpg'},
+  {id:'t6', name:'Steffi', role:'Schwimmtrainerin', bio:'', photo:'assets/team/team-steffi.jpg'},
   {id:'t7', name:'Anna', role:'Schwimmtrainerin', bio:'', photo:''},
   {id:'t8', name:'Bine', role:'Schwimmtrainerin', bio:'', photo:''},
 ];
