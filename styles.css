@@ -1110,3 +1110,12 @@ body.pg-abz .brand{font-size:1.05rem;gap:8px;}
 body.pg-abz .nav{gap:10px;}
 body.pg-abz .back-link{font-size:.78rem;}
 }
+
+/* ===== WhatsApp-Hinweis (Kontakt, Startseite) ===== */
+body.pg-home .wa-link{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;margin-left:8px;border-radius:50%;background:#128C7E;color:#fff;vertical-align:middle;text-decoration:none;transition:background .15s,transform .15s;}
+body.pg-home .wa-link:hover{background:#0B6B5F;transform:scale(1.08);}
+body.pg-home .wa-link:focus-visible{outline:3px solid var(--teal-900);outline-offset:2px;}
+body.pg-home .wa-link svg{width:18px;height:18px;}
+body.pg-home .wa-note{display:block;margin-top:4px;font-size:.88rem;font-weight:400;color:var(--ink-600);}
+body.pg-home .wa-note a{color:var(--teal-700);font-weight:600;text-decoration:underline;}
+body.pg-home .wa-note a:hover{color:var(--coral-500);}
