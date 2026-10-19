@@ -1065,3 +1065,48 @@ body.pg-404 .brand-mark{width:36px;height:36px;}
 body.pg-404 .brand{font-size:1rem;gap:8px;}
 body.pg-404 .quick-links ul{grid-template-columns:1fr;}
 }
+
+/* ===== schwimmabzeichen.html (pg-abz) ===== */
+body.pg-abz *{box-sizing:border-box;}
+body.pg-abz{margin:0;background:var(--sand-100);color:var(--ink-900);font-family:var(--font-body);line-height:1.6;}
+body.pg-abz a{color:var(--teal-700);}
+body.pg-abz h1, body.pg-abz h2{font-family:var(--font-display);font-weight:600;color:var(--teal-900);letter-spacing:-.01em;margin:0 0 .4em;}
+body.pg-abz .container{max-width:960px;margin:0 auto;padding:0 24px;}
+body.pg-abz header{background:var(--sand-050);border-bottom:1px solid var(--line);padding:18px 0;}
+body.pg-abz .nav{display:flex;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto;padding:0 24px;}
+body.pg-abz .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:1.45rem;color:var(--teal-900);text-decoration:none;}
+body.pg-abz .brand-mark{width:100px;height:100px;flex-shrink:0;object-fit:contain;}
+body.pg-abz .back-link{font-size:.88rem;font-weight:600;text-decoration:none;color:var(--teal-700);}
+body.pg-abz main{padding:56px 0 80px;}
+body.pg-abz h1{font-size:clamp(1.9rem,4vw,2.5rem);margin-bottom:10px;}
+body.pg-abz .lead{color:var(--ink-600);max-width:60ch;margin-bottom:32px;}
+body.pg-abz .section-eyebrow{
+    display:inline-block;font-family:var(--font-mono);font-size:.75rem;text-transform:uppercase;
+    letter-spacing:.08em;color:var(--coral-500);font-weight:600;margin-bottom:10px;
+  }
+body.pg-abz .abz-cover{display:block;width:100%;max-width:560px;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);margin:0 auto 48px;}
+body.pg-abz .abz-card{display:flex;gap:28px;align-items:flex-start;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:24px;}
+body.pg-abz .abz-badge{width:140px;height:140px;flex-shrink:0;}
+body.pg-abz .abz-body{flex:1;min-width:0;}
+body.pg-abz .abz-card h2{font-size:1.4rem;margin-bottom:2px;}
+body.pg-abz .abz-sub{color:var(--ink-600);font-size:.92rem;margin:0 0 14px;}
+body.pg-abz .abz-list{margin:0;padding-left:1.2em;display:grid;gap:6px;font-size:.95rem;}
+body.pg-abz .abz-list li::marker{color:var(--frog-500);}
+body.pg-abz .abz-note{margin:16px 0 0;padding:10px 14px;background:var(--sand-100);border-radius:8px;font-size:.85rem;color:var(--ink-600);}
+body.pg-abz .abz-hint{font-size:.82rem;color:var(--ink-600);max-width:70ch;margin:32px 0 0;}
+body.pg-abz footer{background:var(--sand-050);border-top:1px solid var(--line);padding:26px 0;text-align:center;}
+body.pg-abz .footer-fine{font-size:.78rem;color:#7FA39D;margin:0 0 14px;}
+body.pg-abz .footer-nav{display:flex;gap:18px;justify-content:center;list-style:none;padding:0;margin:0 0 10px;font-size:.85rem;flex-wrap:wrap;row-gap:10px;}
+body.pg-abz .footer-nav a{text-decoration:none;color:var(--teal-700);}
+body.pg-abz .footer-nav a:hover{color:var(--coral-500);}
+body.pg-abz .brand-credit .line{display:flex;align-items:center;gap:5px;justify-content:center;}
+body.pg-abz .brand-credit svg{flex-shrink:0;display:block;}
+@media (max-width:640px){
+body.pg-abz .abz-card{flex-direction:column;align-items:center;text-align:left;padding:22px;}
+body.pg-abz .abz-body{width:100%;}
+body.pg-abz .abz-badge{width:112px;height:112px;}
+body.pg-abz .brand-mark{width:44px;height:44px;}
+body.pg-abz .brand{font-size:1.05rem;gap:8px;}
+body.pg-abz .nav{gap:10px;}
+body.pg-abz .back-link{font-size:.78rem;}
+}
