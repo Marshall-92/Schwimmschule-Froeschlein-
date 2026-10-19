@@ -8,21 +8,21 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<title>Schwimmschule Fröschlein — Ferienkurse</title>
-<meta name="description" content="Schwimmschule Fröschlein in Hamburg, Norderstedt und Pleystein: Ferienkurse und Schwimmunterricht für Kinder in kleinen Gruppen mit erfahrenen Trainer:innen.">
+<title>Schwimmschule Fröschlein — Kurse</title>
+<meta name="description" content="Schwimmschule Fröschlein in Hamburg, Norderstedt und Pleystein: Kurse und Schwimmunterricht für Kinder in kleinen Gruppen mit erfahrenen Trainer:innen.">
 <link rel="canonical" href="https://www.schwimmschule-froeschlein.de/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Schwimmschule Fröschlein">
-<meta property="og:title" content="Schwimmschule Fröschlein — Ferienkurse">
-<meta property="og:description" content="Schwimmschule Fröschlein in Hamburg, Norderstedt und Pleystein: Ferienkurse und Schwimmunterricht für Kinder in kleinen Gruppen mit erfahrenen Trainer:innen.">
+<meta property="og:title" content="Schwimmschule Fröschlein — Kurse">
+<meta property="og:description" content="Schwimmschule Fröschlein in Hamburg, Norderstedt und Pleystein: Kurse und Schwimmunterricht für Kinder in kleinen Gruppen mit erfahrenen Trainer:innen.">
 <meta property="og:url" content="https://www.schwimmschule-froeschlein.de/">
 <meta property="og:image" content="https://www.schwimmschule-froeschlein.de/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Schwimmschule Fröschlein — Ferienkurse">
-<meta name="twitter:description" content="Schwimmschule Fröschlein in Hamburg, Norderstedt und Pleystein: Ferienkurse und Schwimmunterricht für Kinder in kleinen Gruppen mit erfahrenen Trainer:innen.">
+<meta name="twitter:title" content="Schwimmschule Fröschlein — Kurse">
+<meta name="twitter:description" content="Schwimmschule Fröschlein in Hamburg, Norderstedt und Pleystein: Kurse und Schwimmunterricht für Kinder in kleinen Gruppen mit erfahrenen Trainer:innen.">
 <meta name="twitter:image" content="https://www.schwimmschule-froeschlein.de/assets/og-image.png">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -44,7 +44,7 @@
         </a>
         <ul class="nav-dropdown-menu">
           <li><a href="schwimmunterricht.html">Schwimmunterricht</a></li>
-          <li><a href="#kurse">Ferienkurse</a></li>
+          <li><a href="#kurse">Kursangebot</a></li>
           <li><a href="warteliste.html">Warteliste Schwimmunterricht</a></li>
         </ul>
       </li>
@@ -74,9 +74,9 @@
   <div class="hero-inner">
     <div>
       <h1>Schwimmen lernen,<br>sicher und mit Freude.</h1>
-      <p>Kleine Gruppen, geprüfte Trainer:innen und ein Kursangebot für jede Könnensstufe — vom ersten Wassergewöhnen bis zum Seepferdchen. Jetzt Platz in den Ferienkursen sichern.</p>
+      <p>Kleine Gruppen, geprüfte Trainer:innen und ein Kursangebot für jede Könnensstufe — vom ersten Wassergewöhnen bis zum Seepferdchen. Jetzt Platz sichern.</p>
       <div class="hero-ctas">
-        <a href="#kurse" class="btn-primary">Ferienkurse ansehen</a>
+        <a href="#kurse" class="btn-primary">Kurse ansehen</a>
         <a href="#ueber-uns" class="btn-ghost">Über die Schwimmschule</a>
       </div>
       <div class="hero-stats">
@@ -127,22 +127,21 @@
   </div>
 </section>
 
-<!-- ============ COURSES / BOOKING ============ -->
+<!-- ============ COURSES ============ -->
 <section id="kurse" style="background:var(--white);">
   <div class="container">
     <div class="section-head">
-      <span class="section-eyebrow">Ferienkurse</span>
-      <h2>Unser Kursangebot für die nächsten Ferien</h2>
-      <p>Jeder Kurs hat eine feste Gruppengröße und Könnensstufe. Meldet euch bei Interesse einfach unverbindlich bei uns.</p>
+      <span class="section-eyebrow">Kurse</span>
+      <h2>Unser aktuelles Kursangebot</h2>
+      <p>Hier findet ihr alle aktuellen Kurse der Schwimmschule. Meldet euch bei Interesse einfach unverbindlich bei uns.</p>
     </div>
     <div class="filter-bar">
-      <label for="age-filter">Altersgruppe filtern:</label>
-      <select id="age-filter" onchange="renderCourses()">
-        <option value="all">Alle Kurse</option>
-        <option value="3-5">3–5 Jahre</option>
-        <option value="5-7">5–7 Jahre</option>
-        <option value="6-9">6–9 Jahre</option>
-        <option value="8-12">8–12 Jahre</option>
+      <label for="location-filter">Ort filtern:</label>
+      <select id="location-filter" onchange="renderCourses()">
+        <option value="all">Alle Orte</option>
+        <option value="Hamburg">Hamburg</option>
+        <option value="Norderstedt">Norderstedt</option>
+        <option value="Pleystein bei Weiden">Pleystein bei Weiden</option>
       </select>
     </div>
     <div id="course-grid" class="course-grid" aria-live="polite">
@@ -192,7 +191,7 @@
   <div class="container about-split">
     <div class="about-copy">
       <span class="section-eyebrow">Unser Ablauf</span>
-      <h2>So läuft ein Ferienkurs ab</h2>
+      <h2>So läuft ein Kurs ab</h2>
       <p>Jeder Kurs läuft über fünf aufeinanderfolgende Werktage in den Ferien. Feste Bahn, feste Gruppe, feste Trainer:in — damit sich die Kinder von Tag eins an sicher fühlen.</p>
       <p>Am letzten Kurstag gibt es für jedes Kind eine kurze Rückmeldung zum Lernstand und, falls erreicht, das passende Schwimmabzeichen.</p>
     </div>
@@ -241,7 +240,7 @@
       <div class="footer-col">
         <h4>Kurse</h4>
         <ul>
-          <li><a href="#kurse">Ferienkurse</a></li>
+          <li><a href="#kurse">Kursangebot</a></li>
           <li><a href="schwimmunterricht.html">Schwimmunterricht</a></li>
           <li><a href="warteliste.html">Warteliste Schwimmunterricht</a></li>
         </ul>
@@ -286,10 +285,10 @@
     </div>
 
     <div class="admin-card" style="margin-bottom:24px;">
-      <h3 style="font-size:1.05rem;margin-bottom:14px;">Ferienkurse verwalten</h3>
+      <h3 style="font-size:1.05rem;margin-bottom:14px;">Kurse verwalten</h3>
       <div style="overflow-x:auto;">
         <table class="admin-table">
-          <thead><tr><th>Kurs</th><th>Frosch-Stufe</th><th>Alter</th><th>Termin</th><th>Preis €</th><th></th></tr></thead>
+          <thead><tr><th>Kurs</th><th>Ort</th><th>Termin</th><th>Preis €</th><th></th></tr></thead>
           <tbody id="admin-course-body"></tbody>
         </table>
       </div>
@@ -297,15 +296,8 @@
       <form class="add-course-form" onsubmit="addCourse(event)">
         <label for="ac-title">Kurstitel</label>
         <input id="ac-title" required placeholder="z. B. Seepferdchen-Kurs">
-        <label for="ac-stage">Frosch-Stufe</label>
-        <input id="ac-stage" placeholder="z. B. Kaulquappe, Frosch-Anfänger …">
-        <label for="ac-age">Altersgruppe</label>
-        <select id="ac-age" required>
-          <option value="3-5">3–5 Jahre</option>
-          <option value="5-7">5–7 Jahre</option>
-          <option value="6-9">6–9 Jahre</option>
-          <option value="8-12">8–12 Jahre</option>
-        </select>
+        <label for="ac-location">Ort</label>
+        <input id="ac-location" required placeholder="z. B. Hamburg, Norderstedt, Pleystein bei Weiden">
         <label for="ac-dates">Termin (Text)</label>
         <input id="ac-dates" required placeholder="z. B. 27.–31. Juli, 9–10 Uhr">
         <label for="ac-price">Preis (€)</label>
