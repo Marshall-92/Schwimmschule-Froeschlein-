@@ -132,7 +132,7 @@ body.pg-home .hero-stats{display:flex;gap:28px;margin-top:44px;flex-wrap:wrap;}
 body.pg-home .hero-stat b{display:block;font-family:var(--font-display);font-size:1.6rem;color:var(--white);}
 body.pg-home .hero-stat span{font-size:.82rem;color:#F2FDFB;}
 body.pg-home .hero-visual{position:relative;}
-body.pg-home .wave-divider{display:block;width:100%;height:auto;margin-top:-2px;}
+body.pg-home .wave-divider{display:block;width:100%;height:auto;margin-top:-2px;overflow:visible;}
 body.pg-home /* ---------- Lane rope (signature element) ---------- */
   .lane-rope{display:flex;align-items:center;gap:0;height:14px;overflow:hidden;}
 body.pg-home .lane-rope span{
@@ -1049,3 +1049,30 @@ body.pg-home .adult-band-text h2{margin-bottom:10px;}
 body.pg-home .adult-band-text p{margin:0;color:var(--ink-600);}
 body.pg-home .adult-band .btn-primary{flex-shrink:0;display:inline-block;}
 body.pg-home .adult-band .section-eyebrow{color:var(--coral-600);}
+
+/* Brand-Credit auf der Schwimmabzeichen-Seite (wie auf den anderen Seiten) */
+body.pg-abz .brand-credit{
+    display:flex;flex-direction:column;align-items:center;gap:2px;
+    padding:22px 24px 10px;text-align:center;
+    font-family:var(--font-mono);font-size:.7rem;color:var(--ink-600);line-height:1.5;
+  }
+
+/* "Zurück zur Website": Pfeil größer, Text bündig auch bei Zeilenumbruch */
+.back-link{display:inline-flex;align-items:center;gap:.45em;}
+.back-link .back-arrow{font-size:1.6em;line-height:1;flex-shrink:0;}
+
+/* Footer Startseite: Marken-Spalte */
+body.pg-home .footer-claim{margin:12px 0 14px;max-width:34ch;font-size:.9rem;line-height:1.5;color:#4B6864;}
+body.pg-home .footer-contact{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:.88rem;}
+body.pg-home .footer-contact a{display:inline-flex;align-items:center;gap:8px;color:var(--ink-900);text-decoration:none;}
+body.pg-home .footer-contact a:hover{color:var(--coral-500);}
+body.pg-home .footer-contact .fc-icon{width:18px;height:18px;flex-shrink:0;color:#128C7E;}
+body.pg-home .footer-brand-col .social-icons{justify-content:flex-start;margin:18px 0 0;}
+@media (max-width:860px){
+body.pg-home .footer-claim{margin-left:auto;margin-right:auto;}
+body.pg-home .footer-contact{align-items:center;}
+body.pg-home .footer-brand-col .social-icons{justify-content:center;}
+}
+@media (max-width:860px){
+body.pg-home .footer-brand-col .brand{justify-content:center;}
+}
