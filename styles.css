@@ -1076,3 +1076,12 @@ body.pg-home .footer-brand-col .social-icons{justify-content:center;}
 @media (max-width:860px){
 body.pg-home .footer-brand-col .brand{justify-content:center;}
 }
+
+/* Mobile Header Startseite: Markenname darf umbrechen, Menü-Button bleibt sichtbar */
+@media (max-width:1080px){
+body.pg-home .brand{white-space:normal;flex-shrink:1;min-width:0;line-height:1.2;}
+body.pg-home .nav-toggle{flex-shrink:0;}
+}
+@media (max-width:420px){
+body.pg-home .brand{font-size:1.05rem;}
+}
