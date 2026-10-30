@@ -1030,3 +1030,22 @@ body.pg-home .wa-note a{color:var(--teal-700);font-weight:600;text-decoration:un
 body.pg-home .wa-note a:hover{color:var(--coral-500);}
 body.pg-home .wa-number{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);}
 body.pg-home .wa-number:hover{color:var(--coral-500);border-bottom-color:var(--coral-500);}
+
+/* Erwachsenen-Schwimmunterricht (schwimmunterricht.html) */
+body.pg-unterricht .adult-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px 34px;margin:32px 0 24px;position:relative;overflow:hidden;}
+body.pg-unterricht .adult-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--frog-500),var(--sun-400));}
+body.pg-unterricht .adult-card .info-card-icon{display:block;}
+body.pg-unterricht .adult-card h2{font-size:1.35rem;margin-bottom:10px;}
+body.pg-unterricht .adult-card p{color:var(--ink-600);font-size:.95rem;margin:0 0 14px;max-width:70ch;}
+body.pg-unterricht .adult-list{margin:0;padding-left:1.2em;display:grid;gap:6px;font-size:.95rem;}
+body.pg-unterricht .adult-list li::marker{color:var(--frog-500);}
+@media (max-width:640px){ body.pg-unterricht .adult-card{padding:24px 22px;} }
+
+/* Erwachsenen-Band (Startseite) */
+body.pg-home .adult-band{background:var(--frog-100);padding:56px 0;}
+body.pg-home .adult-band-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+body.pg-home .adult-band-text{flex:1 1 420px;max-width:64ch;}
+body.pg-home .adult-band-text h2{margin-bottom:10px;}
+body.pg-home .adult-band-text p{margin:0;color:var(--ink-600);}
+body.pg-home .adult-band .btn-primary{flex-shrink:0;display:inline-block;}
+body.pg-home .adult-band .section-eyebrow{color:var(--coral-600);}

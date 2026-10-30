@@ -12,9 +12,8 @@
 const CONTACT_EMAIL = 'info@schwimmschule-froeschlein.de';
 
 const DEFAULT_NEWS = [
-  {id:'n1', title:'Babyschwimmen im Arriba Bad Norderstedt', text:'Das Deutsche Rote Kreuz und unsere erfahrenen Schwimmlehrer Cathleen und Freddy leiten euch beim Babyschwimmen an und lassen euch mit euren Babys erste koordinative Übungen erfahren.', date:'2024-01-09'},
-  {id:'n2', title:'Wir suchen Verstärkung!', text:'Viele kleine Fröschlein möchten mit uns schwimmen lernen, doch dafür brauchen wir weitere Schwimmlehrer! Wenn ihr Spaß an der Arbeit mit Kindern habt, meldet euch einfach über die Kontaktseite.', date:'2023-06-06'},
-  {id:'n3', title:'Das Fröschlein', text:'Endlich ist es soweit: unsere Schwimmschule hat nun eine eigene Webseite. Ab sofort findet ihr hier Informationen zu uns, unseren Kursen und zum Schwimmen an sich.', date:'2023-04-08'},
+  {id:'n1', title:'Wir haben einen neuen Webauftritt!', text:'Die Schwimmschule Fröschlein präsentiert sich ab sofort mit einer neuen, modernen Website: übersichtlicher, schneller und auch am Smartphone bequem zu bedienen. Schaut euch in Ruhe um — hier findet ihr Informationen zu unseren Kursen, Standorten, unserem Team und den Schwimmabzeichen.', date:'2026-10-30'},
+  {id:'n2', title:'Wir suchen Verstärkung in Hamburg-Sasel!', text:'Viele kleine Fröschlein möchten mit uns schwimmen lernen, doch dafür brauchen wir weitere Schwimmlehrer:innen für unseren Standort in Hamburg-Sasel. Wenn ihr Spaß an der Arbeit mit Kindern habt, meldet euch einfach bei uns — per E-Mail oder WhatsApp.', date:'2026-10-30'},
 ];
 
 const DEFAULT_COURSES = [
@@ -111,7 +110,7 @@ function renderNews(){
     grid.innerHTML = '<p class="news-empty">Aktuell gibt es keine neuen Meldungen.</p>';
     return;
   }
-  const sorted = [...news].sort((a,b) => (a.date < b.date ? 1 : -1));
+  const sorted = [...news].sort((a,b) => (a.date < b.date ? 1 : (a.date > b.date ? -1 : 0)));
   grid.innerHTML = sorted.map(n => `
     <div class="news-card">
       <span class="news-date">${formatDateDe(n.date)}</span>
@@ -158,21 +157,18 @@ if(document.getElementById('news-grid')){ renderNews(); }
 
 /* ===== Unser-Team-Seite ===== */
 
-function teamCardHtml(m, isPlaceholder){
+function teamCardHtml(m){
   const avatarInner = m.photo
     ? `<img src="${escapeHtml(m.photo)}" alt="${escapeHtml(m.name)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`
-    : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-4.1 3.4-6.6 7.5-6.6s7.5 2.5 7.5 6.6" stroke-linecap="round"/></svg>`;
-  const name = m.name || '[Name folgt]';
-  const role = m.role || '[Rolle folgt]';
-  const bio = m.bio || '[Kurzvorstellung folgt]';
-  const tag = m.photo ? '' : `<div class="placeholder-tag">Foto folgt</div>`;
+    : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" role="img" aria-label="Kein Foto vorhanden"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-4.1 3.4-6.6 7.5-6.6s7.5 2.5 7.5 6.6" stroke-linecap="round"/></svg>`;
+  const role = m.role ? `<span class="role">${escapeHtml(m.role)}</span>` : '';
+  const bio = m.bio ? `<p style="font-style:normal;">${escapeHtml(m.bio)}</p>` : '';
   return `
     <div class="team-card">
       <div class="avatar">${avatarInner}</div>
-      <h2>${escapeHtml(name)}</h2>
-      <span class="role">${escapeHtml(role)}</span>
-      <p style="${m.bio ? 'font-style:normal;' : ''}">${escapeHtml(bio)}</p>
-      ${tag}
+      <h2>${escapeHtml(m.name)}</h2>
+      ${role}
+      ${bio}
     </div>`;
 }
 
