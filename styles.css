@@ -439,7 +439,7 @@ body.pg-team .placeholder-notice{
     background:var(--frog-100);border:1.5px solid var(--frog-500);border-radius:12px;
     padding:16px 20px;font-size:.88rem;color:var(--ink-900);margin-bottom:48px;max-width:70ch;
   }
-body.pg-team .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+body.pg-team .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
 body.pg-team .team-card{
     background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);
     padding:26px 24px;text-align:center;position:relative;overflow:hidden;
@@ -646,97 +646,6 @@ body.pg-downloads .brand-mark{width:44px;height:44px;}
 body.pg-downloads .brand{font-size:1.05rem;gap:8px;}
 body.pg-downloads .nav{gap:10px;}
 body.pg-downloads .back-link{font-size:.78rem;}
-}
-
-
-/* ===== warteliste.html (pg-warteliste) ===== */
-body.pg-warteliste *{box-sizing:border-box;}
-body.pg-warteliste{margin:0;background:var(--sand-100);color:var(--ink-900);font-family:var(--font-body);line-height:1.6;}
-body.pg-warteliste a{color:var(--teal-700);}
-body.pg-warteliste h1, body.pg-warteliste h2, body.pg-warteliste h3{font-family:var(--font-display);font-weight:600;color:var(--teal-900);letter-spacing:-.01em;margin:0 0 .4em;}
-body.pg-warteliste .container{max-width:760px;margin:0 auto;padding:0 24px;}
-body.pg-warteliste header{background:var(--sand-050);border-bottom:1px solid var(--line);padding:18px 0;}
-body.pg-warteliste .nav{display:flex;align-items:center;justify-content:space-between;max-width:760px;margin:0 auto;padding:0 24px;}
-body.pg-warteliste .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:1.45rem;color:var(--teal-900);text-decoration:none;}
-body.pg-warteliste .brand-mark{width:100px;height:100px;flex-shrink:0;object-fit:contain;}
-body.pg-warteliste .back-link{font-size:.88rem;font-weight:600;text-decoration:none;color:var(--teal-700);}
-body.pg-warteliste main{padding:56px 0 80px;}
-body.pg-warteliste .section-eyebrow{
-    font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--coral-500);margin-bottom:10px;display:block;font-weight:600;
-  }
-body.pg-warteliste h1{font-size:clamp(1.9rem,4vw,2.5rem);margin-bottom:10px;}
-body.pg-warteliste .lead{color:var(--ink-600);max-width:60ch;margin-bottom:40px;}
-body.pg-warteliste .waitlist-card{
-    background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);
-    padding:32px 36px;
-  }
-body.pg-warteliste .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px;}
-body.pg-warteliste .form-row{margin-bottom:8px;display:flex;flex-direction:column;}
-body.pg-warteliste .form-row label{display:block;font-weight:600;font-size:.86rem;margin-bottom:6px;}
-body.pg-warteliste .form-row input{
-    width:100%;padding:11px 13px;border-radius:8px;border:1.5px solid var(--line);
-    font-family:var(--font-body);font-size:.95rem;background:var(--sand-050);color:var(--ink-900);
-    box-sizing:border-box;-webkit-appearance:none;appearance:none;min-width:0;
-  }
-body.pg-warteliste .form-row input:focus{border-color:var(--blue-500);outline:none;}
-body.pg-warteliste .form-row textarea{
-    width:100%;padding:11px 13px;border-radius:8px;border:1.5px solid var(--line);
-    font-family:var(--font-body);font-size:.95rem;background:var(--sand-050);color:var(--ink-900);
-    resize:vertical;min-height:90px;
-  }
-body.pg-warteliste .form-row textarea:focus{border-color:var(--blue-500);outline:none;}
-body.pg-warteliste .form-row .optional{font-weight:400;color:var(--ink-600);font-size:.78rem;}
-body.pg-warteliste .form-status{margin-top:14px;padding:12px 16px;border-radius:10px;font-size:.86rem;display:none;}
-body.pg-warteliste .form-status.visible{display:block;}
-body.pg-warteliste .form-status.error{background:#FDEDE9;border:1.5px solid var(--coral-500);color:var(--ink-900);}
-body.pg-warteliste .success-content{text-align:center;padding:16px 0;}
-body.pg-warteliste .success-content svg{width:52px;height:52px;color:var(--frog-500);margin:0 auto 14px;}
-body.pg-warteliste .success-content h2{margin-bottom:8px;}
-body.pg-warteliste .success-content p{color:var(--ink-600);font-size:.92rem;margin:0;}
-body.pg-warteliste .form-submit:disabled{opacity:.6;cursor:not-allowed;}
-body.pg-warteliste .form-submit{
-    width:100%;background:var(--coral-500);color:var(--white);border:none;padding:13px;
-    border-radius:999px;font-weight:700;font-size:.98rem;cursor:pointer;margin-top:10px;
-    font-family:var(--font-body);transition:background .15s;
-  }
-body.pg-warteliste .form-submit:hover{background:var(--coral-600);}
-body.pg-warteliste .form-note{font-size:.78rem;color:var(--ink-600);margin-top:12px;margin-bottom:0;}
-body.pg-warteliste .privacy-note{margin-bottom:14px;}
-body.pg-warteliste .privacy-note a{color:var(--teal-700);text-decoration:underline;}
-body.pg-warteliste .privacy-check{
-    display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;
-    font-size:.86rem;color:var(--ink-900);cursor:pointer;
-  }
-body.pg-warteliste .privacy-check input{
-    width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--coral-500);cursor:pointer;
-  }
-body.pg-warteliste .privacy-check a{color:var(--teal-700);text-decoration:underline;}
-body.pg-warteliste .info-box{
-    background:var(--frog-100);border:1.5px solid var(--frog-500);border-radius:12px;
-    padding:16px 20px;font-size:.88rem;color:var(--ink-900);margin-bottom:32px;
-  }
-body.pg-warteliste footer{background:var(--sand-050);border-top:1px solid var(--line);padding:26px 0;text-align:center;}
-body.pg-warteliste .footer-fine{font-size:.78rem;color:#7FA39D;margin:0 0 14px;}
-body.pg-warteliste .footer-nav{display:flex;gap:18px;justify-content:center;list-style:none;padding:0;margin:0 0 10px;font-size:.85rem;flex-wrap:wrap;row-gap:10px;}
-body.pg-warteliste .footer-nav a{text-decoration:none;color:var(--teal-700);}
-body.pg-warteliste .footer-nav a:hover{color:var(--coral-500);}
-body.pg-warteliste .brand-credit{
-    display:flex;flex-direction:column;align-items:center;gap:2px;
-    padding:22px 24px 10px;text-align:center;
-    font-family:var(--font-mono);font-size:.7rem;color:var(--ink-600);line-height:1.5;
-  }
-body.pg-warteliste .brand-credit .line{display:flex;align-items:center;gap:5px;justify-content:center;}
-body.pg-warteliste .brand-credit svg{flex-shrink:0;display:block;}
-@media (max-width:600px){
-body.pg-warteliste .form-grid{grid-template-columns:1fr;}
-body.pg-warteliste .waitlist-card{padding:24px 22px;}
-}
-@media (max-width:600px){
-body.pg-warteliste .brand-mark{width:44px;height:44px;}
-body.pg-warteliste .brand{font-size:1.05rem;gap:8px;}
-body.pg-warteliste .nav{gap:10px;}
-body.pg-warteliste .back-link{font-size:.78rem;}
 }
 
 

@@ -45,7 +45,6 @@
         <ul class="nav-dropdown-menu">
           <li><a href="schwimmunterricht.html">Schwimmunterricht</a></li>
           <li><a href="#kurse">Kursangebot</a></li>
-          <li><a href="warteliste.html">Warteliste Schwimmunterricht</a></li>
         </ul>
       </li>
       <li class="nav-dropdown">
@@ -70,7 +69,7 @@
       <li><a href="downloads.html">Downloads</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" onclick="toggleMobileNav()">
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
       <svg id="nav-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="#1B3B37" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
     </button>
   </nav>
@@ -145,7 +144,7 @@
     </div>
     <div class="filter-bar">
       <label for="location-filter">Ort filtern:</label>
-      <select id="location-filter" onchange="renderCourses()">
+      <select id="location-filter">
         <option value="all">Alle Orte</option>
         <option value="Hamburg">Hamburg</option>
         <option value="Norderstedt">Norderstedt</option>
@@ -154,10 +153,6 @@
     </div>
     <div id="course-grid" class="course-grid" aria-live="polite">
       <p>Kurse werden geladen …</p>
-    </div>
-    <div class="waitlist-hint">
-      <p><b>Sucht ihr regulären Schwimmunterricht außerhalb der Ferien?</b> Unsere laufenden Kurse sind aktuell ausgebucht — tragt euch gerne in die Warteliste ein.</p>
-      <a href="warteliste.html" class="btn-book">Zur Warteliste Schwimmunterricht →</a>
     </div>
   </div>
 </section>
@@ -255,7 +250,6 @@
         <ul>
           <li><a href="#kurse">Kursangebot</a></li>
           <li><a href="schwimmunterricht.html">Schwimmunterricht</a></li>
-          <li><a href="warteliste.html">Warteliste Schwimmunterricht</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -284,108 +278,9 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Schwimmschule Fröschlein</span>
-      <a href="#" onclick="toggleAdminGate(event)">Admin-Bereich</a>
     </div>
   </div>
 </footer>
-
-<!-- ============ ADMIN SECTION ============ -->
-<section id="admin-section">
-  <div class="admin-banner">Demo-Admin-Bereich — Login läuft rein im Browser, ohne echte serverseitige Zugangssicherung. Für den produktiven Einsatz durch eine echte Authentifizierung ersetzen.</div>
-  <div class="container" style="padding-top:36px;">
-    <div class="section-head">
-      <span class="section-eyebrow">Verwaltung</span>
-      <h2>Kurse, Aktuelles &amp; Team</h2>
-    </div>
-
-    <div class="admin-card" style="margin-bottom:24px;">
-      <h3 style="font-size:1.05rem;margin-bottom:14px;">Kurse verwalten</h3>
-      <div style="overflow-x:auto;">
-        <table class="admin-table">
-          <thead><tr><th>Kurs</th><th>Ort</th><th>Termin</th><th>Preis €</th><th></th></tr></thead>
-          <tbody id="admin-course-body"></tbody>
-        </table>
-      </div>
-      <h3 style="font-size:1.05rem;margin:26px 0 14px;">Neuen Kurs anlegen</h3>
-      <form class="add-course-form" onsubmit="addCourse(event)">
-        <label for="ac-title">Kurstitel</label>
-        <input id="ac-title" required placeholder="z. B. Seepferdchen-Kurs">
-        <label for="ac-location">Ort</label>
-        <input id="ac-location" required placeholder="z. B. Hamburg, Norderstedt, Pleystein bei Weiden">
-        <label for="ac-dates">Termin (Text)</label>
-        <input id="ac-dates" required placeholder="z. B. 27.–31. Juli, 9–10 Uhr">
-        <label for="ac-price">Preis (€)</label>
-        <input id="ac-price" type="number" min="0" value="89" required>
-        <button type="submit" class="admin-mini-btn" style="width:100%;padding:10px;">Kurs hinzufügen</button>
-      </form>
-    </div>
-
-    <div class="admin-card" style="margin-bottom:24px;">
-      <h3 style="font-size:1.05rem;margin-bottom:14px;">Aktuelles verwalten</h3>
-      <form class="add-course-form" onsubmit="addNews(event)" style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-bottom:20px;">
-        <div>
-          <label for="an-title">Titel</label>
-          <input id="an-title" required placeholder="z. B. Neuer Kurs im September">
-        </div>
-        <div>
-          <label for="an-date">Datum</label>
-          <input id="an-date" type="date" required>
-        </div>
-        <div style="grid-column:1 / -1;">
-          <label for="an-text">Text</label>
-          <input id="an-text" required placeholder="Kurzer Hinweistext für die Website">
-        </div>
-        <div style="grid-column:1 / -1;">
-          <button type="submit" class="admin-mini-btn" style="width:100%;padding:10px;">Meldung veröffentlichen</button>
-        </div>
-      </form>
-      <div id="admin-news-list"></div>
-    </div>
-
-    <div class="admin-card">
-      <h3 style="font-size:1.05rem;margin-bottom:14px;">Team verwalten <span style="font-family:var(--font-mono);font-size:.68rem;font-weight:400;color:var(--ink-600);">— erscheint auf „Unser Team"</span></h3>
-      <div style="overflow-x:auto;">
-        <table class="admin-table">
-          <thead><tr><th>Name</th><th>Rolle</th><th>Kurztext</th><th>Foto</th><th></th></tr></thead>
-          <tbody id="admin-team-body"></tbody>
-        </table>
-      </div>
-      <h3 style="font-size:1.05rem;margin:26px 0 14px;">Neues Teammitglied hinzufügen</h3>
-      <form class="add-course-form" onsubmit="addTeamMember(event)">
-        <label for="at-name">Name</label>
-        <input id="at-name" required placeholder="z. B. Max Mustermann">
-        <label for="at-role">Rolle</label>
-        <input id="at-role" required placeholder="z. B. Trainer">
-        <label for="at-bio">Kurztext (optional)</label>
-        <input id="at-bio" placeholder="Kurze Vorstellung">
-        <label for="at-photo-file">Foto (optional)</label>
-        <input id="at-photo-file" type="file" accept="image/*" onchange="handlePhotoUpload(event, 'at-photo', 'at-photo-status')">
-        <input type="hidden" id="at-photo">
-        <p id="at-photo-status" class="upload-status"></p>
-        <button type="submit" class="admin-mini-btn" style="width:100%;padding:10px;">Teammitglied hinzufügen</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ADMIN LOGIN ============ -->
-<div class="admin-login-overlay" id="admin-login-overlay">
-  <div class="admin-login-card">
-    <button class="admin-login-close" aria-label="Schließen" onclick="closeAdminLogin()">×</button>
-    <h3>Admin-Login</h3>
-    <p class="admin-login-note">Demo-Zugang — keine echte Zugangssicherung für den produktiven Einsatz.</p>
-    <form id="admin-login-form" onsubmit="submitAdminLogin(event)">
-      <label for="admin-user">Benutzername</label>
-      <input id="admin-user" autocomplete="username" required>
-      <label for="admin-pass">Passwort</label>
-      <input id="admin-pass" type="password" autocomplete="current-password" required>
-      <p id="admin-login-error" class="admin-login-error"></p>
-      <button type="submit" class="admin-login-submit">Anmelden</button>
-    </form>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
 
 <div class="brand-credit">
   <span class="line">Code with

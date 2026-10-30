@@ -1,0 +1,52 @@
+# ============================================================
+# Schwimmschule Fröschlein — .htaccess (1blu / Apache)
+# ============================================================
+
+# --- HTTPS erzwingen --------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# --- Eigene Fehlerseite ------------------------------------------------
+ErrorDocument 404 /404.html
+
+# --- Verzeichnislisting aus, keine Versionsangabe -----------------------
+Options -Indexes
+ServerSignature Off
+
+# --- Sensible Dateien sperren ------------------------------------------
+<FilesMatch "^\.(?!well-known)|\.(md|log|bak|sh|ini|json|lock|yml|yaml)$">
+  Require all denied
+</FilesMatch>
+
+# --- Sicherheits-Header -----------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # HSTS erst aktivieren, wenn HTTPS dauerhaft einwandfrei läuft
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Content-Security-Policy: nur eigene Dateien; Kartenkacheln von OpenStreetMap
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.tile.openstreetmap.org; font-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'self'; frame-src 'self'"
+</IfModule>
+
+# --- Kompression & Caching ---------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>

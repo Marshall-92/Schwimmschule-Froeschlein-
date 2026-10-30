@@ -5,14 +5,16 @@
   <circle cx="100" cy="100" r="76" fill="none" stroke="#C85A18" stroke-width="2" opacity=".35"/>
   
   <g fill="#C85A18" stroke="none">
-    <circle cx="104" cy="58" r="14"/>
-    <path d="M94 56l-24 4c-4 1-4 7 0 8l24 4z"/>
-    <path d="M100 44l4-9 4 9zM108 46l7-7 1 10z"/>
+    <circle cx="104" cy="58" r="13"/>
+    <path d="M94 57l-24 3c-4 1-4 7 0 8l24 4z"/>
+    <path d="M99 46l2-9 5 8zM108 46l6-8 1 11z"/>
+    <ellipse cx="102" cy="88" rx="18" ry="22" transform="rotate(-8 102 88)"/>
+    <path d="M118 76l15-5-3 11 12-1-9 12 8 6-16 1z"/>
   </g>
   <g fill="none" stroke="#C85A18" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M108 68c12 8 14 22 8 34-6 12-4 24 4 30" stroke-width="20"/>
-    <path d="M120 132c8 4 6 14-3 14-7 0-9-8-4-11" stroke-width="9"/>
-    <path d="M124 80l12-6m-8 22l14-4m-12 22l13 0" stroke-width="5"/>
+    <path d="M106 66c6 14 4 28-2 40" stroke-width="16"/>
+    <path d="M104 104c8 10 10 22 2 32" stroke-width="12"/>
+    <path d="M106 134c-4 8-12 10-17 5-4-5 0-12 6-12 5 0 6 6 2 8" stroke-width="7"/>
   </g>
-  <circle cx="102" cy="56" r="3.5" fill="#fff"/>
+  <circle cx="102" cy="56" r="3.4" fill="#fff"/>
 </svg>
