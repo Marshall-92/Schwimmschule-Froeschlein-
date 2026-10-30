@@ -2,9 +2,15 @@
 # Schwimmschule Fröschlein — .htaccess (1blu / Apache)
 # ============================================================
 
-# --- HTTPS erzwingen --------------------------------------------------
+# --- HTTPS erzwingen und auf die www-Adresse vereinheitlichen -----------
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Adresse ohne www -> https://www.… (ein Schritt, auch von http aus)
+  RewriteCond %{HTTP_HOST} ^schwimmschule-froeschlein\.de$ [NC]
+  RewriteRule ^ https://www.schwimmschule-froeschlein.de%{REQUEST_URI} [L,R=301]
+
+  # http -> https
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
