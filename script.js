@@ -17,9 +17,7 @@ const DEFAULT_NEWS = [
 ];
 
 const DEFAULT_COURSES = [
-  {id:'c1', lane:1, title:'Wassergewöhnung Eltern-Kind', location:'Norderstedt', dates:'Woche 1 · 27.–31. Juli · 9:00–9:45 Uhr', price:79},
   {id:'c2', lane:2, title:'Seepferdchen-Kurs', location:'Hamburg (TSV Sasel)', dates:'Woche 1 · 27.–31. Juli · 10:00–10:45 Uhr', price:89},
-  {id:'c3', lane:3, title:'Seepferdchen-Kurs', location:'Norderstedt', dates:'Woche 2 · 3.–7. August · 9:00–9:45 Uhr', price:89},
   {id:'c4', lane:4, title:'Bronze-Kurs (Fortgeschrittene)', location:'Hamburg (TSV Sasel)', dates:'Woche 2 · 3.–7. August · 10:00–11:00 Uhr', price:99},
   {id:'c5', lane:5, title:'Silber-Kurs (Technik & Ausdauer)', location:'Pleystein bei Weiden', dates:'Woche 3 · 10.–14. August · 11:00–12:00 Uhr', price:109},
   {id:'c6', lane:6, title:'Seepferdchen-Kurs', location:'Pleystein bei Weiden', dates:'Woche 3 · 10.–14. August · 9:00–9:45 Uhr', price:89},
@@ -203,7 +201,6 @@ if(document.getElementById('map') && typeof L !== 'undefined'){
 
   const locations = [
     { name: 'Hamburg', coords: [53.5511, 9.9937] },
-    { name: 'Norderstedt', coords: [53.6889, 9.9853] },
     { name: 'Pleystein bei Weiden (Oberpfalz)', coords: [49.6499, 12.4038] }
   ];
 
