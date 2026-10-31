@@ -1085,3 +1085,19 @@ body.pg-home .nav-toggle{flex-shrink:0;}
 @media (max-width:420px){
 body.pg-home .brand{font-size:1.05rem;}
 }
+
+/* Rund ums Schwimmen: Video-Bereich */
+body.pg-rus .video-block{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:36px;align-items:center;}
+body.pg-rus .video-frame{margin:0;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+body.pg-rus .video-frame video{display:block;width:100%;max-width:100%;min-width:0;height:auto;max-height:80vh;background:#1B3B37;}
+body.pg-rus .video-text p{margin:0 0 14px;color:var(--ink-900);max-width:52ch;}
+body.pg-rus .video-text .video-meta{font-family:var(--font-mono);font-size:.8rem;color:var(--ink-600);letter-spacing:.04em;}
+@media (max-width:720px){
+body.pg-rus .video-block{grid-template-columns:minmax(0,1fr);gap:22px;}
+body.pg-rus .video-frame{width:100%;max-width:360px;min-width:0;margin:0 auto;}
+body.pg-rus .video-frame video{width:100%;max-width:100%;min-width:0;}
+}
+@media (max-width:360px){
+body.pg-rus .bag-card{min-width:0;padding:16px 10px;}
+body.pg-rus .bag-card h3{font-size:.92rem;overflow-wrap:anywhere;hyphens:auto;}
+}
