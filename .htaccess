@@ -40,7 +40,7 @@ ServerSignature Off
   # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 
   # Content-Security-Policy: nur eigene Dateien; Kartenkacheln von OpenStreetMap; Reichweitenmessung GoatCounter
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.tile.openstreetmap.org https://schwimmschulefroeschlein.goatcounter.com; font-src 'self'; connect-src 'self' https://schwimmschulefroeschlein.goatcounter.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'self'; frame-src 'self'"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://gc.zgo.at https://beckenrand.app; style-src 'self' 'unsafe-inline' https://beckenrand.app; img-src 'self' data: https://beckenrand.app https://*.tile.openstreetmap.org https://schwimmschulefroeschlein.goatcounter.com; font-src 'self'; connect-src 'self' https://schwimmschulefroeschlein.goatcounter.com https://beckenrand.app; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto: https://beckenrand.app; object-src 'self'; frame-src 'self' https://beckenrand.app"
 </IfModule>
 
 # --- Kompression & Caching ---------------------------------------------
