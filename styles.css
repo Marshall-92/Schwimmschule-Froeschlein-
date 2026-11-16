@@ -1127,8 +1127,9 @@ body.pg-downloads .mal-section{margin-top:64px;scroll-margin-top:90px;}
 body.pg-downloads .mal-section h2{font-size:1.5rem;margin-bottom:10px;}
 body.pg-downloads .mal-all{margin:6px 0 28px;padding:12px 22px;}
 body.pg-downloads .mal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
-body.pg-downloads .mal-preview{display:block;background:#fff;border-bottom:1px solid var(--line);}
-body.pg-downloads .mal-preview img{display:block;width:100%;height:auto;}
+body.pg-downloads .mal-card{min-width:0;}
+body.pg-downloads .mal-preview{display:block;position:relative;width:100%;min-width:0;max-width:100%;aspect-ratio:662/936;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);}
+body.pg-downloads .mal-preview img{position:absolute;top:0;left:0;width:100%;height:100%;max-width:100%;object-fit:contain;display:block;}
 body.pg-downloads .mal-card h3{font-size:1.05rem;margin:0 0 6px;color:var(--teal-900);}
 @media (max-width:900px){body.pg-downloads .mal-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media (max-width:480px){body.pg-downloads .mal-grid{grid-template-columns:minmax(0,1fr);}}
