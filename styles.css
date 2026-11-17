@@ -1158,3 +1158,4 @@ body.pg-partner .partner-placeholder .partner-logo span{font-size:.8rem;font-fam
 body.pg-partner .partner-placeholder h2{color:var(--ink-600);}
 @media (max-width:900px){body.pg-partner .partner-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media (max-width:560px){body.pg-partner .partner-grid{grid-template-columns:minmax(0,1fr);}}
+body.pg-partner .partner-logo img{width:auto;height:110px;max-width:100%;border-radius:22px;display:block;}
